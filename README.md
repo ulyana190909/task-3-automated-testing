@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/f0xhq5nv7u9lw90a?svg=true)](https://ci.appveyor.com/project/ulyana190909/task-3-automated-testing)
