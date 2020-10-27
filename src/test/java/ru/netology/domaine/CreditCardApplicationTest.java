@@ -1,14 +1,10 @@
 package ru.netology.domaine;
 
-import io.github.bonigarcia.seljup.SeleniumJupiter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,7 +16,6 @@ public class CreditCardApplicationTest {
 
     static void setUpAlL() {
         WebDriverManager.chromedriver().setup();
-       // System.setProperty("webdriver.chrome.driver ", "driver/chrome/linuxchromedriver");
     }
 
     @BeforeEach
@@ -46,7 +41,7 @@ public class CreditCardApplicationTest {
     }
 
     @Test
-    void shouldSendValidRequestWithDash () {
+    void shouldSendValidRequestWithDash() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Петров-Малышев Михаил");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+32596547851");
@@ -57,7 +52,7 @@ public class CreditCardApplicationTest {
     }
 
     @Test
-    void shouldGetErrorWithInvalidName(){
+    void shouldGetErrorWithInvalidName() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Ivanova Alisa");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+89269664400");
@@ -68,7 +63,7 @@ public class CreditCardApplicationTest {
     }
 
     @Test
-    void shouldGetErrorWithInvalidPhone(){
+    void shouldGetErrorWithInvalidPhone() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Иванова Алиса");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+9269624400");
@@ -79,7 +74,7 @@ public class CreditCardApplicationTest {
     }
 
     @Test
-    void shouldGetErrorDueToNotPressedButton(){
+    void shouldGetErrorDueToNotPressedButton() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type='text']")).sendKeys("Иванова Алиса");
         driver.findElement(By.cssSelector("[type='tel']")).sendKeys("+79269624400");
