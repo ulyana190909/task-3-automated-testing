@@ -5,22 +5,23 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class CreditCardApplicationTest {
     private WebDriver driver;
+    private ChromeOptions chromeOptions = new ChromeOptions();
 
     @BeforeAll
-
     static void setUpAlL() {
         WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions.addArguments("--headless"));
     }
 
     @AfterEach
