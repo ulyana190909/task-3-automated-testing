@@ -21,7 +21,7 @@ public class CreditCardApplicationTest {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver(chromeOptions.addArguments("--headless"));
+        driver = new ChromeDriver(chromeOptions.addArguments("-headless"));
     }
 
     @AfterEach
